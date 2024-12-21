@@ -1,0 +1,32 @@
+{% extends 'webapp/base.html'%}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <i class="fa fa-address-book" aria-hidden="true"></i>
+        &nbsp;
+    <strong>{{record.last_name|upper}} {{record.first_name}}</strong>
+        <hr>
+        &nbsp;
+
+        <p><strong>ID: </strong> {{record.id}}</p>
+        
+        <p><strong>Email: </strong> {{record.email}}</p>
+        <p><strong>Phone: </strong> {{record.phone}}</p>
+        <p><strong>Address: </strong> {{record.address}}</p>
+        <p><strong>City: </strong> {{record.city}}</p>
+        <p><strong>Country: </strong> {{record.country}}</p>
+        <p><strong>Created: </strong> {{record.creation_date}}</p>
+
+    </div>
+
+</div>
+<br>
+<a href="{% url 'dashboard'%}" class="btn btn-outline-secondary btn-sm"> Return &nbsp; <i class="fa fa-backward" aria-hidden="true"></i></a>
+&nbsp; &nbsp;
+<a href="{% url 'update-record' record.id %}" class="btn btn-outline-info btn-sm">Update &nbsp; <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+&nbsp; &nbsp;
+<a href="{% url 'delete-record' record.id %}" class="btn btn-outline-danger btn-sm">Delete &nbsp;<i class="fa fa-trash-o" aria-hidden="true"></i></a>
+
+{% endblock %}

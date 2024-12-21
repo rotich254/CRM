@@ -10,14 +10,16 @@
                 <br>
                 <form method="post" autocomplete="off">
                     {% csrf_token %}
-                    {{ form|crispy }}
+                    {{ form.username|as_crispy_field }}
+                    {{ form.password1|as_crispy_field }}
+                    {{ form.password2|as_crispy_field }}
                     <br>
-                    <button type="submit" class="btn btn-primary w-100 btn-block p-2">Register</button>
+                    <button type="submit" class="btn btn-primary w-100 btn-block p-2"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Register</button>
                 </form>
 
                 <br>
                 <div class="text-center">
-                   <p>Already have an account? </p> <a href="{% url 'login'%}"> Login</a>
+                   <p>Already have an account? </p> <a href="{% url 'login'%}"> <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;Login</a>
                 </div>
                 <br>
         </div>
